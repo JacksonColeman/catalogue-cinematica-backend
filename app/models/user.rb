@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    validates :username, presence: true, length: { minimum: 3, maximum: 30 }
+    validates :username, presence: true, length: { minimum: 3, maximum: 30 }, uniqueness: true
     validates :password, presence: true, length: { minimum: 8 }
     validate :password_complexity
     has_many :likes, dependent: :destroy
